@@ -1,0 +1,101 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kontrol Rumah</title>
+<style>
+
+body{
+font-family: Arial;
+background:#2c3e50;
+color:white;
+text-align:center;
+}
+
+h1{
+margin-top:40px;
+}
+
+.container{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:50px;
+}
+
+.card{
+background:white;
+color:black;
+padding:30px;
+border-radius:15px;
+width:200px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+button{
+padding:10px 20px;
+margin:10px;
+border:none;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+}
+
+.on{
+background:green;
+color:white;
+}
+
+.off{
+background:red;
+color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>KONTROL PERANGKAT LISTRIK RUMAH</h1>
+
+<div class="container">
+
+<div class="card">
+<h2>💡 Lampu</h2>
+<button class="on" onclick="lampOn()">ON</button>
+<button class="off" onclick="lampOff()">OFF</button>
+<p id="lampStatus">Status: OFF</p>
+</div>
+
+<div class="card">
+<h2>🌀 Kipas</h2>
+<button class="on" onclick="fanOn()">ON</button>
+<button class="off" onclick="fanOff()">OFF</button>
+<p id="fanStatus">Status: OFF</p>
+</div>
+
+</div>
+
+<script>
+
+function lampOn(){
+document.getElementById("lampStatus").innerHTML="Status: ON";
+}
+
+function lampOff(){
+document.getElementById("lampStatus").innerHTML="Status: OFF";
+}
+
+function fanOn(){
+document.getElementById("fanStatus").innerHTML="Status: ON";
+}
+
+function fanOff(){
+document.getElementById("fanStatus").innerHTML="Status: OFF";
+}
+
+</script>
+
+</body>
+</html>
+```
