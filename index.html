@@ -1,15 +1,26 @@
-```html
 <!DOCTYPE html>
 <html>
 <head>
 <title>Kontrol Rumah</title>
+
 <style>
 
 body{
 font-family: Arial;
-background:#2c3e50;
 color:white;
 text-align:center;
+height:100vh;
+margin:0;
+
+background: linear-gradient(-45deg,#1abc9c,#3498db,#9b59b6,#e74c3c);
+background-size:400% 400%;
+animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 h1{
@@ -21,6 +32,7 @@ display:flex;
 justify-content:center;
 gap:40px;
 margin-top:50px;
+flex-wrap:wrap;
 }
 
 .card{
@@ -28,8 +40,18 @@ background:white;
 color:black;
 padding:30px;
 border-radius:15px;
-width:200px;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
+width:220px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.icon{
+font-size:60px;
+margin-bottom:10px;
 }
 
 button{
@@ -51,27 +73,44 @@ background:red;
 color:white;
 }
 
+.status{
+font-weight:bold;
+margin-top:10px;
+}
+
 </style>
 </head>
 
 <body>
 
-<h1>KONTROL PERANGKAT LISTRIK RUMAH</h1>
+<h1>🏠 KONTROL PERANGKAT LISTRIK RUMAH</h1>
 
 <div class="container">
 
 <div class="card">
-<h2>💡 Lampu</h2>
+
+<div id="lampIcon" class="icon">💡</div>
+
+<h2>Lampu</h2>
+
 <button class="on" onclick="lampOn()">ON</button>
 <button class="off" onclick="lampOff()">OFF</button>
-<p id="lampStatus">Status: OFF</p>
+
+<p id="lampStatus" class="status">Status: OFF</p>
+
 </div>
 
 <div class="card">
-<h2>🌀 Kipas</h2>
+
+<div id="fanIcon" class="icon">🌀</div>
+
+<h2>Kipas</h2>
+
 <button class="on" onclick="fanOn()">ON</button>
 <button class="off" onclick="fanOff()">OFF</button>
-<p id="fanStatus">Status: OFF</p>
+
+<p id="fanStatus" class="status">Status: OFF</p>
+
 </div>
 
 </div>
@@ -80,22 +119,25 @@ color:white;
 
 function lampOn(){
 document.getElementById("lampStatus").innerHTML="Status: ON";
+document.getElementById("lampIcon").innerHTML="💡";
 }
 
 function lampOff(){
 document.getElementById("lampStatus").innerHTML="Status: OFF";
+document.getElementById("lampIcon").innerHTML="🔌";
 }
 
 function fanOn(){
 document.getElementById("fanStatus").innerHTML="Status: ON";
+document.getElementById("fanIcon").innerHTML="🌀";
 }
 
 function fanOff(){
 document.getElementById("fanStatus").innerHTML="Status: OFF";
+document.getElementById("fanIcon").innerHTML="❌";
 }
 
 </script>
 
 </body>
 </html>
-```
